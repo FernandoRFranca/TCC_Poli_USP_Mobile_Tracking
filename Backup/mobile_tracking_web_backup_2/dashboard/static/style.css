@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)),url(https://www.4truck.com.br/blog/wp-content/uploads/2015/10/4-conselhos-de-como-cuidar-do-bau-do-caminhao-4-truck-1.jpg) no-repeat !important;
+    padding-top:50px;
+    background-size:cover;
+    background-position:center; 
+  }
+  
+.navbar, #first-jumbo  {
+    background: transparent !important;
+  }
+  
+#first-jumbo {
+    text-align:center;
+  }
+
+body {
+    background:rgba(62, 105, 175, 0.336);
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(84, 119, 146, 0.287)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(80, 143, 206, 0.281)!important;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}

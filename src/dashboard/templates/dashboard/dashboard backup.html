@@ -1,0 +1,6 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+    {% for element in information %}
+        <p class="text-white text-center">{{ element }}</p>
+    {% endfor %}
+{% endblock content %}
