@@ -1,2 +1,2 @@
-python server_thread_json_to_sql.py
+python server.py
 pause
