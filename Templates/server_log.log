@@ -1,0 +1,188 @@
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492286.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492286.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492297.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492297.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\x9ds\x1a\x8f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492307.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492307.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\x9ds\x1a\x8f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 9d731a8f
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\x17r\xbfE', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 1772bf45
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\x17r\xbfE', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492317.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492317.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'2/-\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492327.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492327.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'2/-\xe9', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 322f2de9
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492337.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492337.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'&\xbb^\x9f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 26bb5e9f
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'&\xbb^\x9f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'e\x12G\xac', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492347.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492347.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'e\x12G\xac', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 651247ac
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492357.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492357.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'&\xd0\x96\x95', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492367.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492367.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'&\xd0\x96\x95', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 26d09695
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'Sdft', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 53646674
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'Sdft', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492377.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492377.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xf1O\xb5\xad', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492387.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492387.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xf1O\xb5\xad', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: f14fb5ad
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492397.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492397.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\xb0]=\x98', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: b05d3d98
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\xb0]=\x98', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'Y\xbb\x1bo', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"evento": "Telemetria", "timestamp": 1572492407.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"evento": "Telemetria", "timestamp": 1572492407.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'Y\xbb\x1bo', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 59bb1b6f
+DEBUG:websockets.protocol:server - event = connection_lost([WinError 10054] Foi forçado o cancelamento de uma conexão existente pelo host remoto)
+DEBUG:websockets.protocol:server - state = CLOSED
+DEBUG:websockets.protocol:server x code = 1006, reason = [no reason]
+DEBUG:websockets.protocol:server ! failing CLOSED WebSocket connection with code 1006
+DEBUG:websockets.protocol:server x half-closing TCP connection
+ERROR:websockets.server:Error in connection handler
+Traceback (most recent call last):
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 795, in transfer_data
+    message = await self.read_message()
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 863, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 938, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 1018, in read_frame
+    extensions=self.extensions,
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\framing.py", line 121, in read
+    data = await reader(2)
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\asyncio\streams.py", line 679, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\asyncio\streams.py", line 473, in _wait_for_data
+    await self._waiter
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\asyncio\selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [WinError 10054] Foi forçado o cancelamento de uma conexão existente pelo host remoto
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\server.py", line 195, in handler
+    await self.ws_handler(self, path)
+  File ".\server_thread_json_to_sql.py", line 187, in server_listen
+    recv_msg = await websocket.recv()
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 484, in recv
+    await self.ensure_open()
+  File "C:\Users\zfern\AppData\Local\Programs\Python\Python37-32\lib\site-packages\websockets\protocol.py", line 771, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492491.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492491.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492501.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492501.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\x9bK\xf3<', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492511.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492511.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\x9bK\xf3<', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 9b4bf33c
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\x07\xab\xb0"', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 07abb022
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\x07\xab\xb0"', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492521.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492521.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xbe\xef\xa4\x04', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492531.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492531.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xbe\xef\xa4\x04', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: beefa404
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492541.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492541.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\xe1h\xd2\xfc', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: e168d2fc
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\xe1h\xd2\xfc', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xb0\x98\x0f~', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492552.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492552.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xb0\x98\x0f~', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: b0980f7e
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492562.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492562.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'g\x16\x0cZ', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492572.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492572.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'g\x16\x0cZ', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 67160c5a
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\xa5\xeak[', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: a5ea6b5b
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\xa5\xeak[', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492582.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492582.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'{\xda\xe2B', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492592.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492592.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'{\xda\xe2B', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 7bdae242
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492602.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492602.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b"\x97'gB", rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 97276742
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b"\x97'gB", rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'}o\x14\x84', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492613.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492613.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'}o\x14\x84', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 7d6f1484
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492623.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492623.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xa1\\L\x06', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492633.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492633.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xa1\\L\x06', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: a15c4c06
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'Zi\xf8"', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 5a69f822
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'Zi\xf8"', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492643.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492643.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\xfe\x90\x13\xc7', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492653.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492653.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\xfe\x90\x13\xc7', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: fe9013c7
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492663.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492663.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'?\xcf\xc9\\', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 3fcfc95c
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'?\xcf\xc9\\', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\x92\x04\xf3\xfd', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492673.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492673.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\x92\x04\xf3\xfd', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 9204f3fd
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492684.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492684.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=9, data=b'\x8c*\xab_', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492694.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492694.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=10, data=b'\x8c*\xab_', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received solicited pong: 8c2aab5f
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=9, data=b'\na\x15\x1f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server - received ping, sending pong: 0a61151f
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=10, data=b'\na\x15\x1f', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server < Frame(fin=True, opcode=1, data=b'{"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492704.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)
+DEBUG:websockets.protocol:server > Frame(fin=True, opcode=1, data=b'Hello {"id": "truck_1", "evento": "Telemetria", "timestamp": 1572492704.0, "data": {"rotacao": 0, "porta": false, "bau": false, "janela": false, "conectado": false, "estaBloqueiado": false, "bloqueiomanual": false, "latitude": -23.6246758, "longitude": -46.7015654}}', rsv1=False, rsv2=False, rsv3=False)

@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+    {% for element in home_itens %}
+    <div id="landing-wrapper">   
+        <div class="panel panel-primary panel-transparent">
+            <div class="panel-body">
+                <h1 class="display-1 text-white text-center">{{ element.title }}</h1>
+                <p class="text-white text-center">{{ element.subtitle }}</p>
+            </div>
+        </div>
+        <p class="text-white text-center">
+                {{ element.intro_text }}
+        </p>
+        <a type="button" class="btn btn-light btn-lg btn-block" href="/dashboard" role="button">{{ element.button_title }}</a>
+    </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,292 @@
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+        <center>
+            <img src="{% static 'EP.jpg' %}" alt="Escola Politécnica da USP" hspace="100" width="150px" height="150px">
+            <img src="{% static 'EP-Escrita.jpg' %}" alt="EP-Escrita" hspace="100" width="222px" height="40px">
+            <img src="{% static 'cello.png' %}" alt="Samsung SDS Cello" hspace="100" width="150px" height="150px">
+        </center>
+    </head>
+    <body>
+        <div>
+            <div id="conteudo-1">
+                <h2 class="text-dark text-left">Mapa</h2>
+                <!--The div element for the map -->
+                <div id="map" style="width: 400px; height: 300px"></div>
+            </div>
+            <div id="conteudo-2">
+                <h2 class="text-dark text-center">Estado do Veículo</h2>
+                <p class="text-dark text-center" id='truck_id'></p>
+                <p class="text-dark text-center" id='timestamp'></p>
+                <p class="text-dark text-center" id='evento'></p>
+                <p class="text-dark text-center" id='estaBloqueiado'></p>
+                <button onclick="bloquearVeiculo()">Bloquear Veículo</button>
+                <button onclick="desbloquearVeiculo()">Desbloquear Veículo</button>
+            </div>
+            <!---<div id="conteudo-2">
+                <h2 class="text-dark text-right">Lista de veículos</h2>
+            </div>--->
+        </div>
+    </body>
+    <script>
+        //Global position functions.
+        var marker;
+        var uluru = {lat: -23.6246758,lng: -46.7015654};
+        var map;
+
+        function initMap(){
+        // The location of Uluru
+        //{lat: -23.6246758,lng: -46.7015654}
+        //var uluru = {lat: -23.6246758,lng: -46.7015654};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16, center: uluru, disableDefaultUI: true});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+        
+        function moveMarker(lati, longi){
+            urulu = {lat: lati, lng: longi};
+            var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: uluru, disableDefaultUI: true});
+            var center = new google.maps.LatLng(lati, longi);
+            var marker = new google.maps.Marker({position: urulu, map: map});
+            //map.panTo(center);
+            map.setCenter(center);
+        }
+        
+        lnk = "ws://35.192.96.220:5004";
+        lnk_cmd = "ws://35.192.96.220:5005";
+
+        // Telemetria global variables.
+        var selected_truck = "truck_1"; //Por default, como nosso TCC só opera com 1 veículo, não há lógica de listagem de veículos conectados.
+        var json_recv;
+        var truck_id;
+        var evento;
+        var timestamp;
+        var rotacao;
+        var bau;
+        var janela;
+        var conectado;
+        var estaBloqueiado;
+        var bloqueiomanual;
+        var latitude;
+        var longitude;
+
+        // Macro global variables
+        var truck_id_2;
+        var evento_2;
+        var timestamp_2;
+        var latitude_2;
+        var longitude_2;
+        var mensagem = "No message";
+
+        function sendMessage(msg, ws){
+            // Wait until the state of the socket is not ready and send the message when it is...
+            waitForSocketConnection(ws, function(){
+                console.log("message sent!!!");
+                ws.send(msg);
+            });
+        }
+
+        function bloquearVeiculo(){
+            var date_now = new Date().getTime();
+            var command_json = {'truck_id': selected_truck,'evento': 'comando', 'timestamp': date_now, 'data': {'command': 'BLOCK', 'command_id': 1}};
+            console.log(JSON.stringify(command_json));
+            sendMessage(JSON.stringify(command_json), cmd_connection);
+        }
+
+        function desbloquearVeiculo(){
+            var date_now = new Date().getTime();
+            var command_json = {'truck_id': selected_truck,'evento': 'comando', 'timestamp': date_now, 'data': {'command': 'UNBLOCK', 'command_id': 0}};
+            console.log(JSON.stringify(command_json));
+            sendMessage(JSON.stringify(command_json), cmd_connection);
+        }
+
+        // Make the function wait until the connection is made...
+        function waitForSocketConnection(socket, callback){
+            setTimeout(
+                function () {
+                    if (socket.readyState === 1) {
+                        console.log("Connection is made")
+                        if (callback != null){
+                            callback();
+                        }
+                    } else {
+                        console.log("wait for connection...")
+                        waitForSocketConnection(socket, callback);
+                    }
+
+                }, 5); // wait 5 milisecond for the connection...
+        }
+
+        console.log(lnk);
+        console.log(lnk_cmd);
+
+        var connection = new WebSocket(lnk);
+        var cmd_connection = new WebSocket(lnk_cmd);
+
+        waitForSocketConnection(connection);
+        waitForSocketConnection(cmd_connection);
+
+        connection.onmessage = function(event) {
+            //alert(`[message] Data received from server: ${event.data}`);
+            //Colocar aqui as variaveis a serem mostradas no HTML.
+            var json_recv = JSON.parse(event.data);
+            console.log(json_recv);
+            if (json_recv['evento'] == "Telemetria"){
+                var selected_truck = json_recv['truck_id'] // CONSIDERA QUE O CAMINHÃO ESCOLHIDO É O ÚLTIMO QUE EU RECEBI.
+                var truck_id = json_recv['truck_id'];
+                var evento = json_recv['evento'];
+                var timestamp = json_recv['timestamp'];
+                var latitude = json_recv['latitude'];
+                var longitude = json_recv['longitude'];
+                var accuracy = json_recv['accuracy'];
+                var conectado = json_recv['conectado'];
+                var atualizado = json_recv['atualizado'];
+                var acelerador = json_recv['acelerador'];
+                var embreagem = json_recv['embreagem'];
+                var rotacao = json_recv['rotacao'];
+                var pedal = json_recv['pedal'];
+                var temperatura_agua = json_recv['temperatura_agua'];
+                var pedal_freio_1 = json_recv['pedal_freio_1'];
+                var pedal_freio_2 = json_recv['pedal_freio_2'];
+                var cruise_control = json_recv['cruise_control'];
+                var epc = json_recv['epc'];
+                var ac_on_off = json_recv['ac_on_off'];
+                var consumo_combustivel = json_recv['consumo_combustivel'];
+                var torque = json_recv['torque'];
+                var velocidade_fina = json_recv['velocidade_fina'];
+                var marcha = json_recv['marcha'];
+                var pedal_embreagem = json_recv['pedal_embreagem'];
+                var pedal_freio = json_recv['pedal_freio'];
+                var modo_cruzeiro = json_recv['modo_cruzeiro'];
+                var pedal_sim = json_recv['pedal_sim'];
+                var ref_cruzeiro = json_recv['ref_cruzeiro'];
+                var erro_hardware = json_recv['erro_hardware'];
+                var freio_est = json_recv['freio_est'];
+                var luz_bateria = json_recv['luz_bateria'];
+                var tanque = json_recv['tanque'];
+                var reserva = json_recv['reserva'];
+                var velocidade_grosso = json_recv['velocidade_grosso'];
+                var temp_ambiente_delay = json_recv['temp_ambiente_delay'];
+                var temp_ambiente = json_recv['temp_ambiente'];
+                var temp_oleo = json_recv['temp_oleo'];
+                var temp_agua = json_recv['temp_agua'];
+                var hodometro = json_recv['hodometro'];
+                var seta_esquerda = json_recv['seta_esquerda'];
+                var seta_direita = json_recv['seta_direita'];
+                var pisca_alerta = json_recv['pisca_alerta'];
+                var re = json_recv['re'];
+                var porta_motorista = json_recv['porta_motorista'];
+                var porta_passageiro = json_recv['porta_passageiro'];
+                var porta_te = json_recv['porta_te'];
+                var porta_td = json_recv['porta_td'];
+                var capo = json_recv['capo'];
+                var porta_malas = json_recv['porta_malas'];
+                var backlight = json_recv['backlight'];
+                var estaBloqueiado = json_recv['estaBloqueiado'];
+                var bloqueiomanual = json_recv['bloqueiomanual'];
+                
+                moveMarker(latitude, longitude);
+                // Create a new JavaScript Date object based on the timestamp
+                // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+                var date = new Date(timestamp);
+                // Hours part from the timestamp
+                var hours = date.getHours();
+                // Minutes part from the timestamp
+                var minutes = "0" + date.getMinutes();
+                // Seconds part from the timestamp
+                var seconds = "0" + date.getSeconds();
+
+                // Will display time in 10:30:23 format
+                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                //document.getElementById('latitude').innerHTML = latitude;
+                //document.getElementById('longitude').innerHTML = longitude;
+                document.getElementById('timestamp').innerHTML = formattedTime;
+                document.getElementById('evento').innerHTML = evento;
+                document.getElementById('estaBloqueiado').innerHTML = estaBloqueiado;
+                console.log(evento);
+                console.log(timestamp);
+            }
+            if (json_recv['evento'] == "Macro"){
+                var truck_id = json_recv['truck_id'];
+                var evento_2 = json_recv['evento'];
+                var timestamp_2 = json_recv['timestamp'];
+                var latitude_2 = json_recv['latitude'];
+                var longitude_2 = json_recv['longitude'];
+                var mensagem = json_recv['mensagem'];
+                console.log(evento_2);
+                console.log(timestamp_2);
+                console.log(mensagem);
+            }
+        };
+
+        cmd_connection.onmessage = function(event){
+            console.log(event.data);
+        };
+        
+        connection.onclose = function(event) {
+        if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            alert('[close] Connection died');
+        }
+        };
+
+        cmd_connection.onclose = function(event) {
+        if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            alert('[close] Connection died');
+        }
+        };
+        
+        connection.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+        };
+
+        cmd_connection.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+        };
+
+        function requestRoutineTelemetria(){
+            sendMessage("telemetria", connection);
+            //sendMessage("macro", connection);
+        }
+
+        function requestRoutineMacro(){
+            sendMessage("macro", connection);
+            //sendMessage("macro", connection);
+        }
+
+        function pureWait(){
+            console.log("Waiting...")
+        }  
+
+        setInterval(requestRoutineTelemetria, 10000);
+        setInterval(pureWait,5000);
+        setInterval(requestRoutineMacro, 10000);
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATNK2mIUa6XkIm2vqCbdaJHhxwDrg-TXU&callback=initMap">
+    </script>
+    </html>

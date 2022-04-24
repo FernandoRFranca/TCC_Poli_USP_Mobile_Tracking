@@ -1,0 +1,248 @@
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+        <center>
+            <img src="{% static 'EP.jpg' %}" alt="Escola Politécnica da USP" hspace="100" width="150px" height="150px">
+            <img src="{% static 'EP-Escrita.jpg' %}" alt="EP-Escrita" hspace="100" width="222px" height="40px">
+            <img src="{% static 'cello.png' %}" alt="Samsung SDS Cello" hspace="100" width="150px" height="150px">
+        </center>
+    </head>
+    <body>
+        <div>
+            <div id="conteudo-1">
+                <h2 class="text-dark text-left">Mapa</h2>
+                <!--The div element for the map -->
+                <div id="map" style="width: 400px; height: 300px"></div>
+            </div>
+            <div id="conteudo-2">
+                <h2 class="text-dark text-center">Estado do Veículo</h2>
+                <p class="text-dark text-center" id='truck_id'></p>
+                <p class="text-dark text-center" id='timestamp'></p>
+                <p class="text-dark text-center" id='evento'></p>
+                <button onclick="bloquearVeiculo()">Bloquear Veículo</button>
+                <button onclick="desbloquearVeiculo()">Desbloquear Veículo</button>
+            </div>
+            <!---<div id="conteudo-2">
+                <h2 class="text-dark text-right">Lista de veículos</h2>
+            </div>--->
+        </div>
+    </body>
+    <script>
+        //Global position functions.
+        var marker;
+        var uluru = {lat: -23.6246758,lng: -46.7015654};
+        var map;
+
+        function initMap(){
+        // The location of Uluru
+        //{lat: -23.6246758,lng: -46.7015654}
+        //var uluru = {lat: -23.6246758,lng: -46.7015654};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16, center: uluru, disableDefaultUI: true});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+        
+        function moveMarker(lati, longi){
+            urulu = {lat: lati, lng: longi};
+            var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: uluru, disableDefaultUI: true});
+            var center = new google.maps.LatLng(lati, longi);
+            var marker = new google.maps.Marker({position: urulu, map: map});
+            //map.panTo(center);
+            map.setCenter(center);
+        }
+        
+        lnk = "ws://35.192.96.220:5004";
+        lnk_cmd = "ws://35.192.96.220:5005";
+
+        // Telemetria global variables.
+        var selected_truck = "truck_1"; //Por default, como nosso TCC só opera com 1 veículo, não há lógica de listagem de veículos conectados.
+        var json_recv;
+        var truck_id;
+        var evento;
+        var timestamp;
+        var rotacao;
+        var bau;
+        var janela;
+        var conectado;
+        var estaBloqueiado;
+        var bloqueiomanual;
+        var latitude;
+        var longitude;
+
+        // Macro global variables
+        var truck_id_2;
+        var evento_2;
+        var timestamp_2;
+        var latitude_2;
+        var longitude_2;
+        var mensagem = "No message";
+
+        function sendMessage(msg, ws){
+            // Wait until the state of the socket is not ready and send the message when it is...
+            waitForSocketConnection(ws, function(){
+                console.log("message sent!!!");
+                ws.send(msg);
+            });
+        }
+
+        function bloquearVeiculo(){
+            var date_now = new Date().getTime();
+            var command_json = {'truck_id': selected_truck,'evento': 'comando', 'timestamp': date_now, 'data': {'command': 'BLOCK', 'command_id': 1}};
+            console.log(JSON.stringify(command_json));
+            sendMessage(JSON.stringify(command_json), cmd_connection);
+        }
+
+        function desbloquearVeiculo(){
+            var date_now = new Date().getTime();
+            var command_json = {'truck_id': selected_truck,'evento': 'comando', 'timestamp': date_now, 'data': {'command': 'UNBLOCK', 'command_id': 0}};
+            console.log(JSON.stringify(command_json));
+            sendMessage(JSON.stringify(command_json), cmd_connection);
+        }
+
+        // Make the function wait until the connection is made...
+        function waitForSocketConnection(socket, callback){
+            setTimeout(
+                function () {
+                    if (socket.readyState === 1) {
+                        console.log("Connection is made")
+                        if (callback != null){
+                            callback();
+                        }
+                    } else {
+                        console.log("wait for connection...")
+                        waitForSocketConnection(socket, callback);
+                    }
+
+                }, 5); // wait 5 milisecond for the connection...
+        }
+
+        console.log(lnk);
+        console.log(lnk_cmd);
+
+        var connection = new WebSocket(lnk);
+        var cmd_connection = new WebSocket(lnk_cmd);
+
+        waitForSocketConnection(connection);
+        waitForSocketConnection(cmd_connection);
+
+        connection.onmessage = function(event) {
+            //alert(`[message] Data received from server: ${event.data}`);
+            //Colocar aqui as variaveis a serem mostradas no HTML.
+            var json_recv = JSON.parse(event.data);
+            console.log(json_recv);
+            if (json_recv['evento'] == "Telemetria"){
+                var selected_truck = json_recv['truck_id'] // CONSIDERA QUE O CAMINHÃO ESCOLHIDO É O ÚLTIMO QUE EU RECEBI.
+                var truck_id = json_recv['truck_id'];
+                var evento = json_recv['evento'];
+                var timestamp = json_recv['timestamp'];
+                var rotacao = json_recv['rotacao'];
+                var bau = json_recv['bau'];
+                var janela = json_recv['janela'];
+                var conectado = json_recv['conectado'];
+                var estaBloqueiado = json_recv['estaBloqueiado'];
+                var bloqueiomanual = json_recv['bloqueiomanual'];
+                var latitude = json_recv['latitude'];
+                var longitude = json_recv['longitude'];
+                moveMarker(latitude, longitude);
+                // Create a new JavaScript Date object based on the timestamp
+                // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+                var date = new Date(timestamp);
+                // Hours part from the timestamp
+                var hours = date.getHours();
+                // Minutes part from the timestamp
+                var minutes = "0" + date.getMinutes();
+                // Seconds part from the timestamp
+                var seconds = "0" + date.getSeconds();
+
+                // Will display time in 10:30:23 format
+                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                //document.getElementById('latitude').innerHTML = latitude;
+                //document.getElementById('longitude').innerHTML = longitude;
+                document.getElementById('timestamp').innerHTML = formattedTime;
+                console.log(evento);
+                console.log(timestamp);
+            }
+            if (json_recv['evento'] == "Macro"){
+                var truck_id = json_recv['truck_id'];
+                var evento_2 = json_recv['evento'];
+                var timestamp_2 = json_recv['timestamp'];
+                var latitude_2 = json_recv['latitude'];
+                var longitude_2 = json_recv['longitude'];
+                var mensagem = json_recv['mensagem'];
+                console.log(evento_2);
+                console.log(timestamp_2);
+                console.log(mensagem);
+            }
+        };
+
+        cmd_connection.onmessage = function(event){
+            console.log(event.data);
+        };
+        
+        connection.onclose = function(event) {
+        if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            alert('[close] Connection died');
+        }
+        };
+
+        cmd_connection.onclose = function(event) {
+        if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            alert('[close] Connection died');
+        }
+        };
+        
+        connection.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+        };
+
+        cmd_connection.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+        };
+
+        function requestRoutineTelemetria(){
+            sendMessage("telemetria", connection);
+            //sendMessage("macro", connection);
+        }
+
+        function requestRoutineMacro(){
+            sendMessage("macro", connection);
+            //sendMessage("macro", connection);
+        }
+
+        function pureWait(){
+            console.log("Waiting...")
+        }  
+
+        setInterval(requestRoutineTelemetria, 10000);
+        setInterval(pureWait,5000);
+        setInterval(requestRoutineMacro, 10000);
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATNK2mIUa6XkIm2vqCbdaJHhxwDrg-TXU&callback=initMap">
+    </script>
+    </html>
